@@ -1,6 +1,11 @@
-import '@/styles/globals.css'
+import 'styles/globals.sass'
+import Page from "globalComponents/Page"
 import type { AppProps } from 'next/app'
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <Page {...pageProps.pageConfig}>
+      <Component {...pageProps} />
+    </Page>
+  )
 }
